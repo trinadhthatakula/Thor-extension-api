@@ -2,6 +2,8 @@
 
 Contract interfaces for building extensions for the [Thor](https://codeberg.org/trinadh/thor) Android app manager.
 
+> This SDK is published from its own repository at <https://github.com/trinadhthatakula/thor-extension-api>; the Thor app itself lives on [Codeberg](https://codeberg.org/trinadh/thor).
+
 ## Add the dependency
 
 ```kotlin

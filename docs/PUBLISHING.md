@@ -14,7 +14,7 @@ In the portal, generate a user token. It yields a username + password pair used 
 
 ### 3. GPG signing key
 ```bash
-gpg --gen-key                                  # create a key (RSA 4096)
+gpg --full-generate-key                        # choose RSA, 4096 bits (plain --gen-key defaults to ECC)
 gpg --list-secret-keys --keyid-format=long     # note the KEY_ID
 gpg --keyserver keyserver.ubuntu.com --send-keys <KEY_ID>   # publish the public key
 gpg --armor --export-secret-keys <KEY_ID>      # copy the ascii-armored private key
