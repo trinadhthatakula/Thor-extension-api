@@ -31,6 +31,11 @@ signingInMemoryKeyPassword=<key passphrase>
 
 ## Per-release
 
+> **Build on JDK 21.** This project mandates JDK 21 (Zulu/Corretto). If your machine's default
+> `java` is newer (e.g. JDK 26), the javadoc/Dokka step fails with an `IllegalArgumentException`.
+> Either set `JAVA_HOME` to a JDK 21, or pass `-Dorg.gradle.java.home=/path/to/jdk-21` to the
+> Gradle commands below. AGP is pinned to stable **9.2.0** (compileSdk 37) for reproducible builds.
+
 1. Bump `VERSION_NAME` in `gradle.properties` (SemVer). Bump the runtime contract integer
    `thor.extension.api.version` only on a breaking contract change (and the library MAJOR with it).
 - Optional local dry-run without a GPG key (SNAPSHOT versions are exempt from signing):
