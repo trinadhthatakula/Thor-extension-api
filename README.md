@@ -2,7 +2,7 @@
 
 Contract interfaces for building extensions for the [Thor](https://github.com/trinadhthatakula/Thor) Android app manager.
 
-> This SDK is published from its own repository at <https://github.com/trinadhthatakula/thor-extension-api>, separate from the [Thor app](https://github.com/trinadhthatakula/Thor) itself.
+> This SDK is published from its own repository at <https://github.com/trinadhthatakula/Thor-extension-api>, separate from the [Thor app](https://github.com/trinadhthatakula/Thor) itself.
 
 ## Add the dependency
 

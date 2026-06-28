@@ -60,7 +60,7 @@ mavenPublishing {
         name.set("Thor Extension API")
         description.set("Contract interfaces for building extensions for the Thor app manager.")
         inceptionYear.set("2026")
-        url.set("https://github.com/trinadhthatakula/thor-extension-api")
+        url.set("https://github.com/trinadhthatakula/Thor-extension-api")
         licenses {
             license {
                 name.set("GNU General Public License v3.0 or later")
@@ -76,9 +76,9 @@ mavenPublishing {
             }
         }
         scm {
-            url.set("https://github.com/trinadhthatakula/thor-extension-api")
-            connection.set("scm:git:https://github.com/trinadhthatakula/thor-extension-api.git")
-            developerConnection.set("scm:git:ssh://git@github.com/trinadhthatakula/thor-extension-api.git")
+            url.set("https://github.com/trinadhthatakula/Thor-extension-api")
+            connection.set("scm:git:https://github.com/trinadhthatakula/Thor-extension-api.git")
+            developerConnection.set("scm:git:ssh://git@github.com/trinadhthatakula/Thor-extension-api.git")
         }
     }
 }
