@@ -1,5 +1,4 @@
 import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
-import org.gradle.plugins.signing.SigningExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -38,6 +37,10 @@ dependencies {
     api(libs.coil.compose)
 }
 
+// Vanniktech's signAllPublications() requires a GPG key for non-SNAPSHOT versions, including
+// publishToMavenLocal. To verify publishing locally WITHOUT a key, append -PVERSION_NAME=1.0.0-SNAPSHOT
+// (SNAPSHOT versions are exempt from signing). Real releases (VERSION_NAME=1.0.0) sign via the key in
+// ~/.gradle/gradle.properties.
 mavenPublishing {
     coordinates(
         groupId = providers.gradleProperty("GROUP").get(),
@@ -77,21 +80,5 @@ mavenPublishing {
             connection.set("scm:git:https://github.com/trinadhthatakula/thor-extension-api.git")
             developerConnection.set("scm:git:ssh://git@github.com/trinadhthatakula/thor-extension-api.git")
         }
-    }
-}
-
-// DEVIATION FROM BRIEF (documented):
-// Vanniktech 0.34.0's signAllPublications() makes signing *required* for any non-SNAPSHOT
-// version (1.0.0 qualifies), so a credential-free `publishToMavenLocal` fails with
-// "no configured signatory". The constraint requires publishToMavenLocal to NOT need GPG keys.
-// Fix: gate signing on the presence of a signing key. Remote publishing supplies the
-// in-memory key (signingInMemoryKey), so signed artifacts are still produced for Maven Central;
-// only the credential-free local verification path is relaxed. signAllPublications() is kept.
-plugins.withId("signing") {
-    extensions.configure<SigningExtension> {
-        val hasSigningKey = providers.gradleProperty("signingInMemoryKey").isPresent ||
-            providers.gradleProperty("signing.keyId").isPresent ||
-            providers.gradleProperty("signing.gnupg.keyName").isPresent
-        setRequired({ hasSigningKey && gradle.taskGraph.allTasks.any { it.name.contains("PublishToMavenCentral") } })
     }
 }
