@@ -1,8 +1,8 @@
 # Thor Extension API
 
-Contract interfaces for building extensions for the [Thor](https://codeberg.org/trinadh/thor) Android app manager.
+Contract interfaces for building extensions for the [Thor](https://github.com/trinadhthatakula/Thor) Android app manager.
 
-> This SDK is published from its own repository at <https://github.com/trinadhthatakula/thor-extension-api>; the Thor app itself lives on [Codeberg](https://codeberg.org/trinadh/thor).
+> This SDK is published from its own repository at <https://github.com/trinadhthatakula/thor-extension-api>, separate from the [Thor app](https://github.com/trinadhthatakula/Thor) itself.
 
 ## Add the dependency
 
