@@ -4,9 +4,10 @@
 
 ### 1. Central Portal account + namespace
 1. Create an account at https://central.sonatype.com.
-2. Register the namespace `io.github.trinadhthatakula`.
-3. Verify it: the portal gives you a verification token. Create a **public** GitHub repository named
-   exactly that token under the `trinadhthatakula` GitHub account, click verify, then delete the repo.
+2. Register the namespace `com.trinadhthatakula` (shared with the `asgard` library).
+3. Verify it via DNS: the portal gives you a verification token; add it as a TXT record on the
+   `trinadhthatakula.com` apex (Cloudflare), then click verify. (A `com.` namespace is verified by
+   domain ownership, not the GitHub-repo-token method used for `io.github.*` namespaces.)
 
 ### 2. User token
 In the portal, generate a user token. It yields a username + password pair used as
@@ -46,7 +47,7 @@ signingInMemoryKeyPassword=<key passphrase>
    ```
 3. With `automaticRelease = true` the deployment promotes itself; otherwise confirm it in the portal.
 4. Verify the artifact appears at
-   https://repo1.maven.org/maven2/io/github/trinadhthatakula/thor-extension-api/ (allow time for sync).
+   https://repo1.maven.org/maven2/com/trinadhthatakula/thor-extension-api/ (allow time for sync).
 
 ## CI / automated publishing (GitHub Actions)
 
