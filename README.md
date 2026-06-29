@@ -10,7 +10,7 @@ Contract interfaces for building extensions for the [Thor](https://github.com/tr
 dependencies {
     // Thor loads extensions into its own process and provides these classes at runtime,
     // so depend on the API as compileOnly — do NOT bundle it into your extension APK.
-    compileOnly("com.trinadhthatakula:thor-extension-api:1.0.1")
+    compileOnly("com.trinadhthatakula:thor-extension-api:2.0.0")
 }
 ```
 
